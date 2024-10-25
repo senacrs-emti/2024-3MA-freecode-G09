@@ -7,9 +7,9 @@
         android:icon="@drawable/baseline_home"/>
 
     <item
-        android:id="@+id/video"
-        android:title="Video"
-        android:icon="@drawable/baseline_video_library"/>
+        android:id="@+id/mobilidade"
+        android:title="Mobilidades"
+        android:icon="@drawable/baseline_mobilidade"/>
 
     <item
         android:id="@+id/fab"
@@ -17,13 +17,13 @@
         android:enabled="false"/>
 
     <item
-        android:id="@+id/agua"
-        android:title="Água"
-        android:icon="@drawable/baseline_water_drop"/>
+        android:id="@+id/alimentacao"
+        android:title="Aimentação"
+        android:icon="@drawable/outline_alimentacao"/>
 
     <item
-        android:id="@+id/psico"
-        android:title="Psicológico"
-        android:icon="@drawable/baseline_psychology"/>
+        android:id="@+id/preparacao"
+        android:title="Preparação"
+        android:icon="@drawable/baseline_preparacao"/>
 
 </menu>
