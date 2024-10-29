@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "766809246860",
+    "project_id": "proswim-4ff02",
+    "storage_bucket": "proswim-4ff02.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766809246860:android:a67b41e2e54f37183d7fa9",
+        "android_client_info": {
+          "package_name": "com.example.proswim"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGHQVvFwroGkeg6raF8pbFa4tR4Pajxxs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
