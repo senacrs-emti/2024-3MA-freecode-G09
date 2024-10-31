@@ -41,6 +41,7 @@ public class EntrarActivity extends AppCompatActivity {
         cadastrarRedirecionarTexto = findViewById(R.id.cadastrarRedirecionarTexto);
         entrarBotao = findViewById(R.id.entrar_botao);
 
+
         entrarBotao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,7 +65,7 @@ public class EntrarActivity extends AppCompatActivity {
     public Boolean validarUsuario(){
         String val = entrarUsuario.getText().toString();
         if (val.isEmpty()){
-            entrarUsuario.setError("Usuário não pode ficar vazio");
+            entrarUsuario.setError("Campo Obrigatório");
             return false;
         } else {
             entrarUsuario.setError(null);
@@ -75,7 +76,7 @@ public class EntrarActivity extends AppCompatActivity {
     public Boolean validarSenha(){
         String val = entrarSenha.getText().toString();
         if (val.isEmpty()){
-            entrarSenha.setError("Senha não pode ficar vazia");
+            entrarSenha.setError("Campo Obrigatório");
             return false;
         } else {
             entrarSenha.setError(null);
