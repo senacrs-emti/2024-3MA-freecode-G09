@@ -12,24 +12,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProSwim"
         tools:targetApi="31">
+
         <activity
             android:name=".WelcomeActivity"
-            android:exported="false" />
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
         <activity
             android:name=".EntrarActivity"
-            android:exported="false" />
+            android:exported="false">
+        </activity>
+
         <activity
             android:name=".CadastrarActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false">
         </activity>
+
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false">
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"
