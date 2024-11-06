@@ -2,6 +2,9 @@ package com.example.proswim;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -21,17 +24,26 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class CadastrarActivity extends AppCompatActivity {
 
+    // ID´s
     EditText cadastrarNome, cadastrarEmail, cadastrarUsuario, cadastrarSenha;
     TextView entrarRedirecionarTexto;
     Button cadastrarBotao;
     FirebaseDatabase database;
     DatabaseReference reference;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrar);
 
+        // Deixa a página em tela cheia e tira os botões de navegação android
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+        setContentView(R.layout.activity_cadastrar);
+
+        // Puxa os dados
         cadastrarNome = findViewById(R.id.cadastrar_nome);
         cadastrarEmail = findViewById(R.id.cadastrar_email);
         cadastrarUsuario = findViewById(R.id.cadastrar_usuario);
@@ -39,6 +51,8 @@ public class CadastrarActivity extends AppCompatActivity {
         cadastrarBotao = findViewById(R.id.cadastrar_botao);
         entrarRedirecionarTexto = findViewById(R.id.entrarRedirecionarTexto);
 
+
+        //Botão checka informações e libera acesso
         cadastrarBotao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,6 +75,32 @@ public class CadastrarActivity extends AppCompatActivity {
             }
         });
 
+        //|
+        //|
+        //|
+        //|
+        //|
+
+        // Sublinha uma palavra do textview
+        TextView textView = findViewById(R.id.entrarRedirecionarTexto);
+
+        String textoCompleto = "Já tem uma conta? Entrar.";
+        SpannableString spannableString = new SpannableString(textoCompleto);
+        String palavraParaSublinhar = "Entrar";
+
+        int startIndex = textoCompleto.indexOf(palavraParaSublinhar);
+        int endIndex = startIndex + palavraParaSublinhar.length();
+
+        spannableString.setSpan(new UnderlineSpan(), startIndex, endIndex, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        textView.setText(spannableString);
+
+        //|
+        //|
+        //|
+        //|
+        //|
+
+        // Redireciona para a activity "Entrar"
         entrarRedirecionarTexto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,6 +110,8 @@ public class CadastrarActivity extends AppCompatActivity {
         });
     }
 
+
+    // Alerta se estiver com o campo vazio
     public Boolean validarNome() {
         String val = cadastrarNome.getText().toString();
         if (val.isEmpty()) {

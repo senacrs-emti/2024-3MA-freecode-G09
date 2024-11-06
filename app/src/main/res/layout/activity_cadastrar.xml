@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:text="Cadastrar"
                 android:textAlignment="center"
-                android:textColor="@color/lavender"
+                android:textColor="@color/blue"
                 android:textSize="40sp"
                 android:fontFamily="@font/amaranth"
                 android:textStyle="bold"/>
@@ -102,7 +102,7 @@
                 android:id="@+id/cadastrar_botao"
                 android:textSize="20sp"
                 android:layout_marginTop="30dp"
-                android:backgroundTint="@color/lavender"
+                android:backgroundTint="@color/blue"
                 android:fontFamily="@font/amaranth"
                 app:cornerRadius = "20dp"/>
 
@@ -116,7 +116,7 @@
                 android:layout_marginTop="10dp"
                 android:textSize="20sp"
                 android:fontFamily="@font/amaranth"
-                android:textColor="@color/lavender"/>
+                android:textColor="@color/blue"/>
 
         </LinearLayout>
 
