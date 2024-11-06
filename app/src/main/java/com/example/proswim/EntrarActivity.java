@@ -93,8 +93,7 @@ public class EntrarActivity extends AppCompatActivity {
         cadastrarRedirecionarTexto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(EntrarActivity.this, CadastrarActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
     }
