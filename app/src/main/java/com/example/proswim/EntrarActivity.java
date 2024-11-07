@@ -40,17 +40,17 @@ public class EntrarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entrar);
 
-        // Deixa a página em tela cheia e tira os botões de navegação android
-        getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
-        setContentView(R.layout.activity_entrar);
-
         // Puxa os dados
         entrarUsuario = findViewById(R.id.entrar_usuario);
         entrarSenha = findViewById(R.id.entrar_senha);
         cadastrarRedirecionarTexto = findViewById(R.id.cadastrarRedirecionarTexto);
         entrarBotao = findViewById(R.id.entrar_botao);
+
+        //|
+        //|
+        //|
+        //|
+        //|
 
         //Botão checka informações e libera acesso
         entrarBotao.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +63,17 @@ public class EntrarActivity extends AppCompatActivity {
                 }
             }
         });
+
+        //|
+        //|
+        //|
+        //|
+        //|
+
+        // Deixa a página em tela cheia e tira os botões de navegação android
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
         //|
         //|
@@ -89,7 +100,7 @@ public class EntrarActivity extends AppCompatActivity {
         //|
         //|
 
-        // Redirecionar para a activity "Cadastrar"
+        // Volta para a activity "Cadastrar"
         cadastrarRedirecionarTexto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -133,7 +144,7 @@ public class EntrarActivity extends AppCompatActivity {
     //|
     //|
 
-    //Valida as informações com Database(Firebase)
+    // Valida as informações com Database(Firebase)
     public void checkUser(){
         String userUsuario = entrarUsuario.getText().toString().trim();
         String userSenha = entrarSenha.getText().toString().trim();

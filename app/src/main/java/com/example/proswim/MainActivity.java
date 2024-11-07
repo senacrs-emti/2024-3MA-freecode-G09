@@ -1,6 +1,7 @@
 package com.example.proswim;
 
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.WebView;
 
 import androidx.activity.EdgeToEdge;
@@ -46,7 +47,14 @@ public class MainActivity extends AppCompatActivity {
 
                 return true;
             });
+
+            // Deixa a página em tela cheia e tira os botões de navegação android
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
         }
+
+
 
         private void replaceFragment (Fragment fragment) {
             FragmentManager fragmentManager = getSupportFragmentManager();

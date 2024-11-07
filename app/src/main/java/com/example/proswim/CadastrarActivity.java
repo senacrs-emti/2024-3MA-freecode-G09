@@ -85,28 +85,7 @@ public class CadastrarActivity extends AppCompatActivity {
         // Deixa a página em tela cheia e tira os botões de navegação android
         getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
-        setContentView(R.layout.activity_cadastrar);
-
-        EditText editText = findViewById(R.id.cadastrar_email);
-
-        //|
-        //|
-        //|
-        //|
-        //|
-
-        // Texto grande vai acompanhando até o final
-        EditText email = findViewById(R.id.cadastrar_email);
-
-        editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    cadastrarEmail.setSelection(cadastrarEmail.getText().length());
-                }
-            }
-        });
+                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
         //|
         //|
