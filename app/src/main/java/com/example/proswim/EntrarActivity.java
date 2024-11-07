@@ -169,5 +169,4 @@ public class EntrarActivity extends AppCompatActivity {
             }
         });
     }
-
 }

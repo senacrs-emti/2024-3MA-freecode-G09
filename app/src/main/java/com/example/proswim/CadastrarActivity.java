@@ -2,8 +2,10 @@ package com.example.proswim;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.SpannableString;
 import android.text.Spanned;
+import android.text.TextWatcher;
 import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.View;
@@ -37,12 +39,6 @@ public class CadastrarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrar);
 
-        // Deixa a página em tela cheia e tira os botões de navegação android
-        getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
-        setContentView(R.layout.activity_cadastrar);
-
         // Puxa os dados
         cadastrarNome = findViewById(R.id.cadastrar_nome);
         cadastrarEmail = findViewById(R.id.cadastrar_email);
@@ -51,6 +47,11 @@ public class CadastrarActivity extends AppCompatActivity {
         cadastrarBotao = findViewById(R.id.cadastrar_botao);
         entrarRedirecionarTexto = findViewById(R.id.entrarRedirecionarTexto);
 
+        //|
+        //|
+        //|
+        //|
+        //|
 
         //Botão checka informações e libera acesso
         cadastrarBotao.setOnClickListener(new View.OnClickListener() {
@@ -71,6 +72,38 @@ public class CadastrarActivity extends AppCompatActivity {
                     Toast.makeText(CadastrarActivity.this, "Você se cadastrou com sucesso!", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(CadastrarActivity.this, EntrarActivity.class);
                     startActivity(intent);
+                }
+            }
+        });
+
+        //|
+        //|
+        //|
+        //|
+        //|
+
+        // Deixa a página em tela cheia e tira os botões de navegação android
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+        setContentView(R.layout.activity_cadastrar);
+
+        EditText editText = findViewById(R.id.cadastrar_email);
+
+        //|
+        //|
+        //|
+        //|
+        //|
+
+        // Texto grande vai acompanhando até o final
+        EditText email = findViewById(R.id.cadastrar_email);
+
+        editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    cadastrarEmail.setSelection(cadastrarEmail.getText().length());
                 }
             }
         });
@@ -110,6 +143,11 @@ public class CadastrarActivity extends AppCompatActivity {
         });
     }
 
+    //|
+    //|
+    //|
+    //|
+    //|
 
     // Alerta se estiver com o campo vazio
     public Boolean validarNome() {

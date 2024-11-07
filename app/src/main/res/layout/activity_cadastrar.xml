@@ -30,7 +30,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cadastrar"
+                android:text="Crie uma conta"
                 android:textAlignment="center"
                 android:textColor="@color/blue"
                 android:textSize="40sp"
@@ -60,6 +60,7 @@
                 android:padding="8dp"
                 android:hint="Email"
                 android:textColorHint="@color/gray"
+                android:singleLine="true"
                 android:drawableLeft="@drawable/baseline_carta"
                 android:drawablePadding="8dp"
                 android:fontFamily="@font/amaranth"
