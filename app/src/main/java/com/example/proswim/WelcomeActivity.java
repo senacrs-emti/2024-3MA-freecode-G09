@@ -33,7 +33,6 @@ public class WelcomeActivity extends AppCompatActivity {
                 Intent intent = new Intent(WelcomeActivity.this, CadastrarActivity.class);
                 startActivity(intent);
                 finish();
-
             }
         });
     }

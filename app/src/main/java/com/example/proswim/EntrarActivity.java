@@ -164,6 +164,7 @@ public class EntrarActivity extends AppCompatActivity {
                         entrarUsuario.setError(null);
                         Intent intent = new Intent(EntrarActivity.this, MainActivity.class);
                         startActivity(intent);
+                        finishAffinity();
                     } else {
                         entrarSenha.setError("Credenciais Inválidas");
                         entrarSenha.requestFocus();

@@ -1,5 +1,7 @@
 package com.example.proswim;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
             replaceFragment(new HomeFragment());
             binding.bottomNav.setBackground(null);
 
+            // Botões do "bottom menu"
             binding.bottomNav.setOnItemSelectedListener(item -> {
 
                 int id = item.getItemId();
