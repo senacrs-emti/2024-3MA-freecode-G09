@@ -21,6 +21,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -30,8 +32,8 @@ public class CadastrarActivity extends AppCompatActivity {
     EditText cadastrarNome, cadastrarEmail, cadastrarUsuario, cadastrarSenha;
     TextView entrarRedirecionarTexto;
     Button cadastrarBotao;
-    FirebaseDatabase database;
-    DatabaseReference reference;
+
+    private FirebaseAuth mAuth;
 
 
     @Override
@@ -39,10 +41,10 @@ public class CadastrarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrar);
 
+        mAuth = FirebaseAuth.getInstance();
+
         // Puxa os dados
-        cadastrarNome = findViewById(R.id.cadastrar_nome);
         cadastrarEmail = findViewById(R.id.cadastrar_email);
-        cadastrarUsuario = findViewById(R.id.cadastrar_usuario);
         cadastrarSenha = findViewById(R.id.cadastrar_senha);
         cadastrarBotao = findViewById(R.id.cadastrar_botao);
         entrarRedirecionarTexto = findViewById(R.id.entrarRedirecionarTexto);
@@ -57,22 +59,8 @@ public class CadastrarActivity extends AppCompatActivity {
         cadastrarBotao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (validarNome() & validarEmail() & validarUsuario() & validarSenha()) {
-                    database = FirebaseDatabase.getInstance();
-                    reference = database.getReference("users");
-
-                    String nome = cadastrarNome.getText().toString();
-                    String email = cadastrarEmail.getText().toString();
-                    String usuario = cadastrarUsuario.getText().toString();
-                    String senha = cadastrarSenha.getText().toString();
-
-                    HelperClass helperClass = new HelperClass(nome, email, usuario, senha);
-                    reference.child(usuario).setValue(helperClass);
-
-                    Toast.makeText(CadastrarActivity.this, "Você se cadastrou com sucesso!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(CadastrarActivity.this, EntrarActivity.class);
-                    startActivity(intent);
-                }
+                registerUser();
+                finish();
             }
         });
 
@@ -85,7 +73,7 @@ public class CadastrarActivity extends AppCompatActivity {
         // Deixa a página em tela cheia e tira os botões de navegação android
         getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
         //|
         //|
@@ -129,47 +117,42 @@ public class CadastrarActivity extends AppCompatActivity {
     //|
 
     // Alerta se estiver com o campo vazio
-    public Boolean validarNome() {
-        String val = cadastrarNome.getText().toString();
-        if (val.isEmpty()) {
-            cadastrarNome.setError("Campo Obrigatório!");
-            return false;
-        } else {
-            cadastrarNome.setError(null);
-            return true;
-        }
-    }
+    private void registerUser() {
+        String email = cadastrarEmail.getText().toString().trim();
+        String senha = cadastrarSenha.getText().toString().trim();
 
-    public Boolean validarEmail() {
-        String val = cadastrarEmail.getText().toString();
-        if (val.isEmpty()) {
+        if (email.isEmpty()) {
             cadastrarEmail.setError("Campo Obrigatório!");
-            return false;
-        } else {
-            cadastrarEmail.setError(null);
-            return true;
+            cadastrarEmail.requestFocus();
+            return;
         }
-    }
 
-    public Boolean validarUsuario() {
-        String val = cadastrarUsuario.getText().toString();
-        if (val.isEmpty()) {
-            cadastrarUsuario.setError("Campo Obrigatório!");
-            return false;
-        } else {
-            cadastrarUsuario.setError(null);
-            return true;
-        }
-    }
-
-    public Boolean validarSenha() {
-        String val = cadastrarSenha.getText().toString();
-        if (val.isEmpty()) {
+        if (senha.isEmpty()) {
             cadastrarSenha.setError("Campo Obrigatório!");
-            return false;
-        } else {
-            cadastrarSenha.setError(null);
-            return true;
+            cadastrarSenha.requestFocus();
+            return;
         }
+
+        // Valida as informações com Authentication(Firebase)
+        mAuth.createUserWithEmailAndPassword(email, senha)
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        if (user != null) {
+                            user.sendEmailVerification().addOnCompleteListener(task1 -> {
+                                if (task1.isSuccessful()) {
+                                    Toast.makeText(CadastrarActivity.this, "Cadastro realizado. Verifique seu email.", Toast.LENGTH_LONG).show();
+                                    Intent intent = new Intent(CadastrarActivity.this, EntrarActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                } else {
+                                    Toast.makeText(CadastrarActivity.this, "Falha no envio do email de verificação.", Toast.LENGTH_LONG).show();
+                                }
+                            });
+                        }
+                    } else {
+                        Toast.makeText(CadastrarActivity.this, "Já existe um usuário com esse Email", Toast.LENGTH_LONG).show();
+                    }
+                });
     }
 }

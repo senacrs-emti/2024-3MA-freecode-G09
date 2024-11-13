@@ -36,48 +36,18 @@
                 android:textSize="40sp"
                 android:fontFamily="@font/amaranth"
                 android:textStyle="bold"/>
-            
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/cadastrar_nome"
-                android:background="@drawable/borda"
-                android:layout_marginTop="40dp"
-                android:padding="8dp"
-                android:hint="Nome"
-                android:textColorHint="@color/gray"
-                android:singleLine="true"
-                android:drawableLeft="@drawable/baseline_person"
-                android:drawablePadding="8dp"
-                android:fontFamily="@font/amaranth"
-                android:textColor="@color/black"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:id="@+id/cadastrar_email"
                 android:background="@drawable/borda"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="25dp"
                 android:padding="8dp"
                 android:hint="Email"
                 android:textColorHint="@color/gray"
                 android:singleLine="true"
                 android:drawableLeft="@drawable/baseline_carta"
-                android:drawablePadding="8dp"
-                android:fontFamily="@font/amaranth"
-                android:textColor="@color/black"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:id="@+id/cadastrar_usuario"
-                android:background="@drawable/borda"
-                android:layout_marginTop="20dp"
-                android:padding="8dp"
-                android:hint="Nome de Usuário"
-                android:textColorHint="@color/gray"
-                android:singleLine="true"
-                android:drawableLeft="@drawable/baseline_person_pin_"
                 android:drawablePadding="8dp"
                 android:fontFamily="@font/amaranth"
                 android:textColor="@color/black"/>
@@ -117,7 +87,7 @@
                 android:text="Já tem uma conta? Entrar"
                 android:layout_gravity="center"
                 android:padding="8dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="0dp"
                 android:textSize="20sp"
                 android:fontFamily="@font/amaranth"
                 android:textColor="@color/blue"/>
