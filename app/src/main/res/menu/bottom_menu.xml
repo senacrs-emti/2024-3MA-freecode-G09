@@ -2,19 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/home"
-        android:title="Home"
-        android:icon="@drawable/baseline_home"/>
+        android:id="@+id/tutoriais"
+        android:title="Tutoriais"
+        android:icon="@drawable/baseline_videocam"/>
 
     <item
         android:id="@+id/mobilidade"
         android:title="Mobilidades"
         android:icon="@drawable/baseline_mobilidade"/>
 
-    <item
-        android:id="@+id/fab"
-        android:title=""
-        android:enabled="false"/>
 
     <item
         android:id="@+id/alimentacao"
@@ -22,8 +18,8 @@
         android:icon="@drawable/outline_alimentacao"/>
 
     <item
-        android:id="@+id/preparacao"
-        android:title="Preparação"
+        android:id="@+id/mentalidade"
+        android:title="Mentalidade"
         android:icon="@drawable/baseline_preparacao"/>
 
 </menu>

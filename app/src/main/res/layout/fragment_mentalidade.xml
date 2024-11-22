@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lavender"
-    tools:context=".PreparacaoFragment">
+    android:background="@color/blue"
+    tools:context=".MentalidadeFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Preparação"
+        android:text="Mentalidade"
         android:gravity="center"
         android:textSize="30sp"
         android:textColor="@color/white"/>

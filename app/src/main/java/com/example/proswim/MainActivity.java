@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             binding = ActivityMainBinding.inflate(getLayoutInflater());
             setContentView(binding.getRoot());
 
-            replaceFragment(new HomeFragment());
+            replaceFragment(new TutoriaisFragment());
             binding.bottomNav.setBackground(null);
 
             // Botões do "bottom menu"
@@ -35,11 +35,11 @@ public class MainActivity extends AppCompatActivity {
 
                 int id = item.getItemId();
 
-                if (id == R.id.home) {
-                    replaceFragment(new HomeFragment());
+                if (id == R.id.tutoriais) {
+                    replaceFragment(new TutoriaisFragment());
                 }
-                else if (id == R.id.preparacao) {
-                    replaceFragment(new PreparacaoFragment());
+                else if (id == R.id.mentalidade) {
+                    replaceFragment(new MentalidadeFragment());
                 }
                 else if (id == R.id.mobilidade) {
                     replaceFragment(new MobilidadeFragment());
