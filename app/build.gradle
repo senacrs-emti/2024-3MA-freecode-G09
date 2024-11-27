@@ -8,6 +8,7 @@ android {
     namespace 'com.example.proswim'
     compileSdk 34
 
+
     defaultConfig {
         applicationId "com.example.proswim"
         minSdk 24
@@ -35,10 +36,6 @@ android {
         buildFeatures {
             viewBinding true
         }
-
-        viewBinding{
-            enable = true
-        }
     }
 
     dependencies {
@@ -52,7 +49,9 @@ android {
         //Biblioteca Kotlin
         implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.10"
 
-        implementation ("com.google.android.material:material:1.9.0")
+        implementation("com.google.android.material:material:1.9.0")
+        //API YouTube
+        implementation 'com.google.android.youtube:youtube-android-player-api:1.2.2'
 
 
         implementation libs.appcompat

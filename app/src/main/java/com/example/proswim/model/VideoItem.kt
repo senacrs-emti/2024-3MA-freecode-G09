@@ -8,7 +8,7 @@ class VideoItem {
     fun getVideos(): Flow<MutableList<Video>>{
         val listaVideos = mutableListOf(
             Video(
-                videoUrl = "<iframe width=\"100%\" height=\"100%\" src=\"https://www.youtube.com/embed/DmWWqogr_r8?si=b7tfFQaoyBf8UNrd\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+                videoUrl = "https://www.youtube.com/embed/jDabVNrSiwA?si=30WIfCGQsbWgdApU",
                 titulo = "21 Savage - a lot (Official Video) ft. J. Cole"
             ),
             Video(
