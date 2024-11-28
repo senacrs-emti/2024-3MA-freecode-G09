@@ -50,8 +50,6 @@ android {
         implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.10"
 
         implementation("com.google.android.material:material:1.9.0")
-        //API YouTube
-        implementation 'com.google.android.youtube:youtube-android-player-api:1.2.2'
 
 
         implementation libs.appcompat
