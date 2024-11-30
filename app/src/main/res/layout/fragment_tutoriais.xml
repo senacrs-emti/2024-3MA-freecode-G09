@@ -1,36 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue"
     tools:context=".TutoriaisFragment">
 
-    <View
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+    <LinearLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/white" />
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:gravity="center">
 
     <TextView
-        android:id="@+id/textvieww"
+        android:id="@+id/titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="0dp"
         android:gravity="center"
         android:text="@string/app_name"
         android:textColor="@color/black"
-        android:textSize="22dp"
-        android:textStyle="bold"/>
+        android:fontFamily="@font/amaranth"
+        android:textSize="30dp"
+        android:textStyle=""/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/exerciseRecyclerView"
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/iniciante"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textvieww"
+        android:fontFamily="@font/amaranth"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:textSize="30dp"
+        android:textColor="@color/lime"
+        android:text="Iniciante" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/exerciseRecyclerView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-12dp"
+        android:orientation="horizontal" />
+
+        <TextView
+            android:id="@+id/medio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amaranth"
+            android:layout_marginTop="0dp"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:textColor="@color/orange"
+            android:text="Intermediário" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/exerciseRecyclerView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:orientation="horizontal" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/profissional"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amaranth"
+            android:layout_marginTop="0dp"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:textColor="@color/red"
+            android:text="Avançado" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/exerciseRecyclerView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal" />
+
+    </LinearLayout>
+</ScrollView>

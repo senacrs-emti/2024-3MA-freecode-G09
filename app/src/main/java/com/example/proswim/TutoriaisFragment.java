@@ -26,7 +26,7 @@ public class TutoriaisFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_tutoriais, container, false);
 
         // Configurar RecyclerView
-        recyclerView = view.findViewById(R.id.exerciseRecyclerView);
+        recyclerView = view.findViewById(R.id.exerciseRecyclerView1);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
 
         // Adicionar o PagerSnapHelper para rolagem de estilo "paginado"
@@ -35,10 +35,11 @@ public class TutoriaisFragment extends Fragment {
 
         // Lista de vídeos e títulos
         List<Integer> videos = Arrays.asList(R.raw.exercise1, R.raw.exercise2, R.raw.exercise3);
-        List<String> titles = Arrays.asList("Exercício 1", "Exercício 2", "Exercício 3");
+        List<String> titles = Arrays.asList("Exercício 1", "Exercício 2", "Exercício 3"); //Os títulos
+        List<Integer> covers = Arrays.asList(R.drawable.cover1, R.drawable.cover2, R.drawable.cover3); // As capas
 
         // Configurar o Adapter
-        adapter = new ExercicioAdapter(videos, titles);
+        adapter = new ExercicioAdapter(videos, titles, covers);
         recyclerView.setAdapter(adapter);
 
         return view;
