@@ -2,6 +2,7 @@ package com.example.proswim;
 
 import android.os.Bundle;
 
+import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -17,5 +18,6 @@ public class MobilidadeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_mobilidade, container, false);
+
     }
 }

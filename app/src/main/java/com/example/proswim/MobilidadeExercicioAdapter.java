@@ -11,14 +11,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
-public class ExercicioAdapter extends RecyclerView.Adapter<ExercicioAdapter.ExercicioViewHolder> {
+public class MobilidadeExercicioAdapter extends RecyclerView.Adapter<MobilidadeExercicioAdapter.ExercicioViewHolder> {
 
     private final List<Integer> videos; // Lista de vídeos
     private final List<String> titles; // Lista de títulos
     private final List<Integer> covers; // Lista de capas
 
     // Construtor do Adapter
-    public ExercicioAdapter(List<Integer> videos, List<String> titles, List<Integer> covers) {
+    public MobilidadeExercicioAdapter(List<Integer> videos, List<String> titles, List<Integer> covers) {
         this.videos = videos; // Atribuir a lista dos vídeos
         this.titles = titles; // Atribuir a lista dos títulos
         this.covers = covers; // Atribuir a lista de capas

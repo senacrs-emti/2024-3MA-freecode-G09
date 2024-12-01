@@ -27,10 +27,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
         android:gravity="center"
-        android:text="@string/app_name"
+        android:text="Aperte na Imagem para Iniciar o Vídeo"
         android:textColor="@color/black"
         android:fontFamily="@font/amaranth"
-        android:textSize="30dp"
+        android:textSize="20dp"
         android:textStyle=""/>
 
     </LinearLayout>
@@ -41,17 +41,29 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/amaranth"
         android:gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="25dp"
         android:textSize="30dp"
         android:textColor="@color/lime"
         android:text="Iniciante" />
+
+        <TextView
+            android:id="@+id/auxilio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amaranth"
+            android:gravity="end"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="15dp"
+            android:textSize="10dp"
+            android:textColor="@color/black"
+            android:text="(Deslize para mais vídeos) --->" />
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/exerciseRecyclerView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-12dp"
+        android:layout_marginTop="-23dp"
         android:orientation="horizontal" />
 
         <TextView
@@ -65,11 +77,23 @@
             android:textColor="@color/orange"
             android:text="Intermediário" />
 
+        <TextView
+            android:id="@+id/auxilio2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amaranth"
+            android:gravity="end"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="15dp"
+            android:textSize="10dp"
+            android:textColor="@color/black"
+            android:text="(Deslize para mais vídeos) --->" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/exerciseRecyclerView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="-23dp"
         android:orientation="horizontal" />
 
         <TextView
@@ -83,11 +107,24 @@
             android:textColor="@color/red"
             android:text="Avançado" />
 
+        <TextView
+            android:id="@+id/auxilio3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amaranth"
+            android:gravity="end"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="15dp"
+            android:textSize="10dp"
+            android:textColor="@color/black"
+            android:text="(Deslize para mais vídeos) --->" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/exerciseRecyclerView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="-23dp"
+        android:layout_marginBottom="45dp"
         android:orientation="horizontal" />
 
     </LinearLayout>

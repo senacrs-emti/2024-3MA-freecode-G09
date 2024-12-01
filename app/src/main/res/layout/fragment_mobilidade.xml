@@ -1,19 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue"
+    android:padding="16dp"
     tools:context=".MobilidadeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Mobilidade"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:textColor="@color/white"/>
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Título -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mobilidades"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:padding="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cronograma de Rotinas"
+            android:textSize="20sp"
+            android:paddingTop="16dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnScheduleRoutine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Criar Cronograma"
+            android:padding="12dp" />
+
+        <!-- Seção: Alongamentos básicos -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alongamentos Básicos"
+            android:textSize="20sp"
+            android:paddingTop="16dp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/basicStretchRecyclerView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" />
+
+        <!-- Seção: Mobilidade avançada -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mobilidade Avançada"
+            android:textSize="20sp"
+            android:paddingTop="16dp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/advancedMobilityRecyclerView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" />
+
+        <!-- Seção: Checklist -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Checklist Diário"
+            android:textSize="20sp"
+            android:paddingTop="16dp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/checklistRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+    </LinearLayout>
+</ScrollView>
