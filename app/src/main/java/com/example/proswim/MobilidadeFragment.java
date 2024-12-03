@@ -42,27 +42,21 @@ public class MobilidadeFragment extends Fragment {
         snapHelper3.attachToRecyclerView(checklistRecyclerView);
 
         // Lista de vídeos e títulos
-        List<Integer> exercisevideos1 = Arrays.asList(R.raw.videoexercise1, R.raw.videoexercise2, R.raw.videoexercise3);
-        List<String> exercisetitles1 = Arrays.asList("Como fazer a braçada", "Como respirar durante o nado", "Como bater perna corretamente"); //Os títulos
+        List<Integer> exercisevideos1 = Arrays.asList(R.raw.videomobilidade1, R.raw.videomobilidade2, R.raw.videomobilidade3);
+        List<String> exercisetitles1 = Arrays.asList("Alongamento de Ombro com Elastico", "Rotação de Quadril", "Alongamento Posterior de Quadril"); //Os títulos
         List<Integer> exercisecovers1 = Arrays.asList(R.drawable.capa1, R.drawable.capa2, R.drawable.capa3); // As capas
 
-        List<Integer> exercisevideos2 = Arrays.asList(R.raw.videoexercise4, R.raw.videoexercise5, R.raw.videoexercise6);
-        List<String> exercisetitles2 = Arrays.asList("Como fazer a virada", "Como executar o 'StreamLine'", "Como melhorar a posição da cabeça"); //Os títulos
+        List<Integer> exercisevideos2 = Arrays.asList(R.raw.videomobilidade4, R.raw.videomobilidade5, R.raw.videomobilidade6);
+        List<String> exercisetitles2 = Arrays.asList("Liberação com 'Foam Roller'", "Flexão + Rotação de Quadril", "Braçada no Elástico"); //Os títulos
         List<Integer> exercisecovers2 = Arrays.asList(R.drawable.capa4, R.drawable.capa5, R.drawable.capa6); // As capas
-
-        List<Integer> exercisevideos3 = Arrays.asList(R.raw.videoexercise7, R.raw.videoexercise8, R.raw.videoexercise9);
-        List<String> exercisetitles3 = Arrays.asList("Aprenda os 4 tipos de nados", "Principais materiais na natação", "Como fazer a saída do bloco"); //Os títulos
-        List<Integer> exercisecovers3 = Arrays.asList(R.drawable.capa7, R.drawable.capa8, R.drawable.capa9); // As capas
 
         // Configurar o Adapter
         MobilidadeExercicioAdapter exerciseadapter1  = new MobilidadeExercicioAdapter(exercisevideos1, exercisetitles1, exercisecovers1);
         MobilidadeExercicioAdapter exerciseadapter2  = new MobilidadeExercicioAdapter(exercisevideos2, exercisetitles2, exercisecovers2);
-        MobilidadeExercicioAdapter exerciseadapter3  = new MobilidadeExercicioAdapter(exercisevideos3, exercisetitles3, exercisecovers3);
 
         // Adicionar Adapters aos RecyclerViews
         basicStretchRecyclerView1.setAdapter(exerciseadapter1);
         advancedMobilityRecyclerView2.setAdapter(exerciseadapter2);
-        checklistRecyclerView.setAdapter(exerciseadapter3);
 
         return view;
     }

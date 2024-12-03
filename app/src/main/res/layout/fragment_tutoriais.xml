@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue"
+    android:padding="16dp"
     tools:context=".TutoriaisFragment">
 
     <LinearLayout
@@ -44,7 +45,7 @@
         android:layout_marginTop="25dp"
         android:textSize="30dp"
         android:textColor="@color/lime"
-        android:text="Iniciante" />
+        android:text="Educativos Básicos" />
 
         <TextView
             android:id="@+id/auxilio"
@@ -52,7 +53,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/amaranth"
             android:gravity="end"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="0dp"
             android:layout_marginTop="15dp"
             android:textSize="10dp"
             android:textColor="@color/black"
@@ -75,7 +76,7 @@
             android:gravity="center"
             android:textSize="30dp"
             android:textColor="@color/orange"
-            android:text="Intermediário" />
+            android:text="Educativos Intermediários" />
 
         <TextView
             android:id="@+id/auxilio2"
@@ -83,7 +84,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/amaranth"
             android:gravity="end"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="0dp"
             android:layout_marginTop="15dp"
             android:textSize="10dp"
             android:textColor="@color/black"
@@ -105,7 +106,7 @@
             android:gravity="center"
             android:textSize="30dp"
             android:textColor="@color/red"
-            android:text="Avançado" />
+            android:text="Educativos Avançados" />
 
         <TextView
             android:id="@+id/auxilio3"
@@ -113,7 +114,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/amaranth"
             android:gravity="end"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="0dp"
             android:layout_marginTop="15dp"
             android:textSize="10dp"
             android:textColor="@color/black"
